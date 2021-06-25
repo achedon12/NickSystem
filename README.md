@@ -2,9 +2,16 @@
 plugin pocketmine permettant de changer son pseudo 
 
 ------
+## Commande
+
+/nick
+
+/unnick
+
+------
 
 ## Permission
 
-/nick : use.nickname
+    use.nickname
 
-/unnick : use.unnickname
+    use.unnickname

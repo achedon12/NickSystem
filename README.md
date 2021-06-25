@@ -1,8 +1,9 @@
 # nickSystem
 plugin pocketmine permettant de changer son pseudo 
 
+------
 
-# Permission
+## Permission
 
 /nick : use.nickname
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace ash\Commands;
+namespace achedon12\nicksystem\Commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;

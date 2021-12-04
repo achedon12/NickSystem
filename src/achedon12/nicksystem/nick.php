@@ -1,13 +1,13 @@
 <?php
 
-namespace ash;
+namespace achedon12\nicksystem;
 
-use ash\Commands\nickname;
-use ash\Commands\unnick;
+use achedon12\nicksystem\Commands\nickname;
+use achedon12\nicksystem\Commands\unnick;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 
-class main extends PluginBase implements Listener{
+class nick extends PluginBase implements Listener{
 
     protected function onEnable() : void{
         $this->getLogger()->info("plugin enable");

@@ -4,13 +4,14 @@ namespace ash\Commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\Player;
+use pocketmine\lang\Translatable;
+use pocketmine\player\Player;
 
 class unnick extends Command{
 
-    public function __construct(string $name, string $description = "", string $usageMessage = null, array $aliases = [])
+    public function __construct(string $name, Translatable|string $description = "", Translatable|string|null $usageMessage = null, array $aliases = [])
     {
-        parent::__construct("unnickname", "reset son pseudo", "/unnickname", ["unnick"]);
+        parent::__construct($name, $description, $usageMessage, $aliases);
         $this->setPermission("use.unnickname");
     }
 
@@ -23,13 +24,13 @@ class unnick extends Command{
                 }else{
                     $sender->setNameTag($sender->getName());
                     $sender->setDisplayName($sender->getName());
-                    $sender->sendMessage("§4/!\ §fVous avez été unnick");
+                    $sender->sendMessage("§4/!\ §fYou have been unnick");
                 }
             }else{
-                $sender->sendMessage("§4/!\ §fTu n'as pas la permission d'utiliser cette commande");
+                $sender->sendMessage("§4/!\ §fYou don't have this permission to use this command");
             }
         }else{
-            $sender->sendMessage("Commande à utiliser en jeu");
+            $sender->sendMessage("Command to execute in game");
         }
     }
 }

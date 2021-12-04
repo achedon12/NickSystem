@@ -4,13 +4,14 @@ namespace ash\Commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\Player;
+use pocketmine\lang\Translatable;
+use pocketmine\player\Player;
 
 class nickname extends Command{
 
-    public function __construct(string $name, string $description = "", string $usageMessage = null, array $aliases = [])
+    public function __construct(string $name, Translatable|string $description = "", Translatable|string|null $usageMessage = null, array $aliases = [])
     {
-        parent::__construct("nickname", "changer de pseudo", "/nickname", ["nick"]);
+        parent::__construct($name, $description, $usageMessage, $aliases);
         $this->setPermission("use.nickname");
     }
 
@@ -23,13 +24,13 @@ class nickname extends Command{
                 }else{
                     $sender->setNameTag($args[0]);
                     $sender->setDisplayName($args[0]);
-                    $sender->sendMessage("§4/!\ §fVous avez été nick en §c{$args[0]}");
+                    $sender->sendMessage("§4/!\ §fYour new pseudo is §c{$args[0]}");
                 }
             }else{
-                $sender->sendMessage("§4/!\ §fTu n'as pas la permission d'utiliser cette commande");
+                $sender->sendMessage("§4/!\ §fYou don't have this permission to use this command");
             }
         }else{
-            $sender->sendMessage("Commande à utiliser en jeu");
+            $sender->sendMessage("Command to execute in game");
         }
     }
 }

@@ -2,12 +2,15 @@
 
 namespace achedon12\nicksystem\Commands;
 
+use achedon12\nicksystem\nick;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\lang\Translatable;
 use pocketmine\player\Player;
+use pocketmine\plugin\PluginOwned;
+use pocketmine\plugin\Plugin;
 
-class unnick extends Command{
+class unnick extends Command implements PluginOwned {
 
     public function __construct(string $name, Translatable|string $description = "", Translatable|string|null $usageMessage = null, array $aliases = [])
     {
@@ -32,5 +35,9 @@ class unnick extends Command{
         }else{
             $sender->sendMessage("Command to execute in game");
         }
+    }
+
+    public function getOwningPlugin() : Plugin{
+        return nick::getInstance();
     }
 }

@@ -2,10 +2,12 @@
 
 namespace achedon12\nicksystem\Commands;
 
+use achedon12\nicksystem\nick;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\lang\Translatable;
 use pocketmine\player\Player;
+use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginOwned;
 
 class nickname extends Command implements PluginOwned {
@@ -34,7 +36,8 @@ class nickname extends Command implements PluginOwned {
             $sender->sendMessage("Command to execute in game");
         }
     }
+
     public function getOwningPlugin() : Plugin{
-        return Fly::getInstance();
+        return nick::getInstance();
     }
 }

@@ -9,7 +9,7 @@ use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
 use pocketmine\plugin\PluginBase;
 
-class nick extends PluginBase implements Listener{
+class nick extends PluginBase {
 
     private static nick $instance;
 
@@ -25,11 +25,11 @@ class nick extends PluginBase implements Listener{
         PermissionManager::getInstance()->addPermission(new Permission("use.nickname","nickname permission"));
         PermissionManager::getInstance()->addPermission(new Permission("use.unnickname","unnickname permission"));
     }
-    
 
-    public static function getInstance(): self
-    {
+
+    public static function getInstance(): self{
         return self::$instance;
     }
+
 
 }

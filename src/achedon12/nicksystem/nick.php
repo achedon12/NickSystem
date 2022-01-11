@@ -14,7 +14,6 @@ class nick extends PluginBase implements Listener{
     private static nick $instance;
 
     protected function onEnable() : void{
-        $this->getLogger()->info("plugin enable");
 
         $this->getServer()->getCommandMap()->registerAll('Commands',[
            new nickname("nickname","Change your pseudo","/nickname",["nick"]),
@@ -26,9 +25,7 @@ class nick extends PluginBase implements Listener{
         PermissionManager::getInstance()->addPermission(new Permission("use.nickname","nickname permission"));
         PermissionManager::getInstance()->addPermission(new Permission("use.unnickname","unnickname permission"));
     }
-    public function onDisable() : void{
-        $this->getLogger()->info("plugin disable");
-    }
+    
 
     public static function getInstance(): self
     {
